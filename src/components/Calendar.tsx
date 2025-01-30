@@ -22,6 +22,11 @@ interface CalendarProps {
 
 const Calendar: React.FC<CalendarProps> = ({ events }) => {
   const allEvents = processEvents(events);
+
+  const onDelete = (title: string) => {
+    console.log('Delete:', title);
+  };
+
   return (
     <CalendarContainer>
       {Array.from({ length: 12 }).map((_, index) => (
@@ -36,6 +41,7 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
             height={calculatePosition(event.end - event.start)}
             left={event.left!}
             width={event.width!}
+            onDelete={onDelete}
           />
         )),
       )}

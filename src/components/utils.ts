@@ -95,11 +95,12 @@ const convertToMinutesSince9AM = (time: Dayjs | null): number | null => {
 };
 
 export const handleTimeChange = (times: [Dayjs | null, Dayjs | null] | null) => {
+    if (!times) return { start: null, end: null };
     if (times && times[0] && times[1]) {
         const event: EventObject = {
             start: convertToMinutesSince9AM(times[0]) !== null ? convertToMinutesSince9AM(times[0])! + 1 : null,
             end: convertToMinutesSince9AM(times[1]) !== null ? convertToMinutesSince9AM(times[1])! + 1 : null,
         };
-        console.log("Event Object:", event);
+        return event;
     }
 };

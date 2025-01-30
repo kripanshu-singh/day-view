@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CloseOutlined } from '@ant-design/icons';
 
 const EventContainer = styled.div<{ top: number; height: number; left: number; width: number }>`
   position: absolute;
@@ -21,12 +22,15 @@ export interface EventProps {
   height: number;
   left: number;
   width: number;
+  onDelete: (title: string) => void;
 }
 
-const Event: React.FC<EventProps> = ({ title, top, height, left, width }) => {
+const Event: React.FC<EventProps> = ({ title, top, height, left, width, onDelete }) => {
+
   return (
     <EventContainer top={top} height={height} left={left} width={width}>
       {title}
+      <CloseOutlined onClick={() => onDelete(title)} />
     </EventContainer>
   );
 };
