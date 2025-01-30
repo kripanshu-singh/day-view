@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
@@ -15,14 +14,12 @@ const StyledContainer = styled.div`
   }
 `;
 
-type Props = {}
-
-const Header = (props: Props) => {
-  return (
-    <StyledContainer>
-        <span>Zenskar</span>
-    </StyledContainer>
-  )
+const Header = () => {
+    return (
+        <StyledContainer>
+            <span>Zenskar</span>
+        </StyledContainer>
+    )
 }
 
 export default Header;

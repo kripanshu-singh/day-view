@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
     background-color: #f5f5f5;
     border-right: 1px solid #ddd;
     justify-content: space-between;
-    height: 720px;
+    height: 740px;
 `;
 
 const StyledTime = styled.div<{ isBold: boolean }>`
@@ -28,6 +28,7 @@ const TimeLine: React.FC = () => {
         { time: `${hour % 12 || 12}:00`, bold: true, type: `${hour >= 12 ? "PM" : "AM"}` },
         { time: `${hour % 12 || 12}:30`, bold: false, type: "" },
     ]);
+    slots.pop();
 
     return (
         <StyledContainer>
