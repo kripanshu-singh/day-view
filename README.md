@@ -117,10 +117,10 @@ In addition to the core functionality, I have implemented **event addition and d
 
 ### Adding an Event
 
-  <img src="./src/assets/addEvent.gif" alt="Adding Event" style="border: 2px solid black; display: inline-block; border-radius: 8px;">
+  <img src="./src/assets/addEvent.gif" alt="Adding Event" style="border: 2px solid white; display: inline-block; border-radius: 8px;">
 
 ### Deleting an Event
 
-  <img src="./src/assets/deleteEnvent.gif" alt="Adding Event" style="border: 2px solid black; display: inline-block; border-radius: 8px;">
+  <img src="./src/assets/deleteEnvent.gif" alt="Adding Event" style="border: 2px solid white; display: inline-block; border-radius: 8px;">
 
 Thanks for reviewing my submission! Looking forward to discussing it. 😊
