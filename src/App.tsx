@@ -4,12 +4,14 @@ import Header from './components/Header';
 import './index.css';
 import AddEvent from './components/AddEvent';
 import styled from 'styled-components';
+import TimeLine from './components/TimeLine';
 
 const StyledLayout = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  height: 100%;
+  overflow: auto;
 `;
 
 const events = [
@@ -36,6 +38,7 @@ const App: React.FC = () => {
     <div className="App">
       <Header />
       <StyledLayout>
+        <TimeLine />
         <Calendar events={events} />
         <AddEvent />
       </StyledLayout>

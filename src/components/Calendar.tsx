@@ -6,7 +6,7 @@ import { calculatePosition, processEvents, EventProps } from "./utils";
 const CalendarContainer = styled.div`
   width: 620px;
   height: 720px;
-  padding: 0 10px;
+  margin: 0 10px;
   position: relative;
   background-color: #f5f5f5;
 `;
