@@ -1,6 +1,16 @@
 import React from 'react';
 import Calendar from './components/Calendar';
+import Header from './components/Header';
 import './index.css';
+import AddEvent from './components/AddEvent';
+import styled from 'styled-components';
+
+const StyledLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+`;
 
 const events = [
   { title: 'A item', start: 10, end: 90 },
@@ -24,7 +34,11 @@ const events = [
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Calendar events={events} />
+      <Header />
+      <StyledLayout>
+        <Calendar events={events} />
+        <AddEvent />
+      </StyledLayout>
     </div>
   );
 };
