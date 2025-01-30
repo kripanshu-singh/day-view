@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Tooltip } from 'antd';
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -11,15 +12,33 @@ const StyledContainer = styled.div`
     font-size: 24px;
     font-weight: 600;
     margin-left: 20px;
+    flex: 1;
+  }
+  .link{
+    cursor: pointer;
   }
 `;
 
+const StyledImage = styled.img`
+  margin-right: 20px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid white;
+`;
+
 const Header = () => {
-    return (
-        <StyledContainer>
-            <span>Zenskar</span>
-        </StyledContainer>
-    )
+  return (
+    <StyledContainer>
+      <span>Zenskar</span>
+      <a className='link' href="https://kripanshu-singh.vercel.app/" target="blank">
+        <Tooltip title="About me" color="#ececec"
+          overlayInnerStyle={{ color: 'black', border: '1px solid #d9d9d9' }}
+          placement="bottom">
+          <StyledImage width={35} height={35} src={'https://picsum.photos/200/300'} />
+        </Tooltip>
+      </a>
+    </StyledContainer>
+  )
 }
 
 export default Header;

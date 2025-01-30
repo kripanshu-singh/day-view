@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TimePicker, Input, Button } from 'antd';
+import { TimePicker, Input, Button, message } from 'antd';
 import { disabledHours, disabledMinutes, handleTimeChange } from './utils';
 import styled from 'styled-components';
 import { Dayjs } from 'dayjs';
@@ -51,6 +51,7 @@ const AddEvent: React.FC = () => {
     const onAdd = () => {
         const id = uuidv4();
         console.log('Add:', { ...data, id });
+         message.success('Added Event Sccessfully');
     };
 
     return (
