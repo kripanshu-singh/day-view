@@ -1,0 +1,18 @@
+export const events = [
+  { title: "Sample Input", start: 10, end: 90 },
+  { title: "Sample Input", start: 20, end: 80 },
+  { title: "Sample Input", start: 70, end: 180 },
+  { title: "Sample Input", start: 90, end: 180 },
+  { title: "Sample Input", start: 200, end: 270 },
+  { title: "Sample Input", start: 230, end: 290 },
+  { title: "Sample Input", start: 300, end: 340 },
+  { title: "Sample Input", start: 350, end: 400 },
+  { title: "Sample Input", start: 370, end: 580 },
+  { title: "Sample Input", start: 410, end: 480 },
+  { title: "Sample Input", start: 450, end: 590 },
+  { title: "Sample Input", start: 500, end: 595 },
+  { title: "Sample Input", start: 530, end: 590 },
+  { title: "Sample Input", start: 600, end: 660 },
+  { title: "Sample Input", start: 650, end: 690 },
+  { title: "Sample Input", start: 670, end: 710 },
+];

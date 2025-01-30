@@ -8,9 +8,10 @@ const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   overflow: auto;
-  .holder{
+  /* height: calc(100vh - 54px); */
+  .holder {
     border: 1px solid #e0e0e0;
-    border-radius: 6px; 
+    border-radius: 6px;
     height: fit-content;
   }
 `;
@@ -26,13 +27,14 @@ const CalendarContainer = styled.div`
 
 interface CalendarProps {
   events: EventProps[];
+  setEvent: React.Dispatch<React.SetStateAction<EventProps[]>>;
 }
 
-const Calendar: React.FC<CalendarProps> = ({ events }) => {
+const Calendar: React.FC<CalendarProps> = ({ events, setEvent }) => {
   const allEvents = processEvents(events);
 
-  const onDelete = (title: string) => {
-    console.log('Delete:', title);
+  const onDelete = (id: string) => {
+    setEvent((prev) => prev.filter((event) => event.id !== id)); // Now works
   };
 
   return (
@@ -49,7 +51,7 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
                 height={calculatePosition(event.end - event.start)}
                 left={event.left!}
                 width={event.width!}
-                onDelete={onDelete}
+                onDelete={() => onDelete(event.id!)}
               />
             )),
           )}
