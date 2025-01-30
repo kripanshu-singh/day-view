@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { getSlots } from "./utils";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -7,8 +8,7 @@ const StyledContainer = styled.div`
   align-items: end;
   width: 100px;
   justify-content: space-between;
-  height: 740px;
-  /* height: calc(100vh - 54px); */
+  height: 100%;
   margin-right: 10px;
 `;
 
@@ -23,20 +23,11 @@ const StyledTime = styled.div<{ $isbold: boolean }>`
 `;
 
 const TimeLine: React.FC = () => {
-  const hours = Array.from({ length: 13 }, (_, i) => i + 9);
-  const slots = hours.flatMap((hour) => [
-    {
-      time: `${hour % 12 || 12}:00`,
-      bold: true,
-      type: `${hour >= 12 ? "PM" : "AM"}`,
-    },
-    { time: `${hour % 12 || 12}:30`, bold: false, type: "" },
-  ]);
-  slots.pop();
+
 
   return (
     <StyledContainer>
-      {slots.map((slot, index) => (
+      {getSlots().map((slot, index) => (
         <StyledTime key={index} $isbold={slot.bold}>
           {slot.time}
           <span>{slot.type}</span>

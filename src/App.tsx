@@ -12,10 +12,11 @@ const StyledLayout = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: calc(100vh - 54px);
-  overflow: auto;
+  height: 100%;
   width: 100%;
   justify-content: space-around;
+  overflow: auto;
+  min-height: 750px;
 `;
 
 const App: React.FC = () => {
@@ -23,7 +24,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
-      <StyledLayout>
+      <StyledLayout id="layout">
         <Calendar events={event} setEvent={setEvent} />
         <AddEvent setEvent={setEvent} />
       </StyledLayout>

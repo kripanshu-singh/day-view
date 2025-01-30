@@ -4,6 +4,7 @@ import me from "../assets/Me.gif";
 const StyledContainer = styled.div`
   width: 100%;
   height: 54px;
+  min-height: 54px;
   background: #1e2233;
   display: flex;
   align-items: center;
@@ -20,7 +21,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledImage = styled.img`
-  margin-right: 20px;
+  margin-right: 24px;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid white;
@@ -38,10 +39,10 @@ const Header = () => {
         <Tooltip
           title="About me"
           color="#ececec"
-          overlayInnerStyle={{ color: "black", border: "1px solid #d9d9d9" }}
+          overlayInnerStyle={{ color: "black", border: "1px solid #a4a4a4" }}
           placement="bottom"
         >
-          <StyledImage width={35} height={35} src={me} />
+          <StyledImage width={30} height={30} src={me} />
         </Tooltip>
       </a>
     </StyledContainer>

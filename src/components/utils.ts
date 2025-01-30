@@ -118,3 +118,17 @@ export const handleTimeChange = (
 export const addId = (events: Omit<EventProps, "id">[]) => {
   return events.map((event) => ({ ...event, id: uuidv4() }));
 };
+
+export const getSlots = () => {
+  const hours = Array.from({ length: 13 }, (_, i) => i + 9);
+  const slots = hours.flatMap((hour) => [
+    {
+      time: `${hour % 12 || 12}:00`,
+      bold: true,
+      type: `${hour >= 12 ? "PM" : "AM"}`,
+    },
+    { time: `${hour % 12 || 12}:30`, bold: false, type: "" },
+  ]);
+  slots.pop();
+  return slots;
+} 

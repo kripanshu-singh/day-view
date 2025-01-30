@@ -49,6 +49,14 @@ const EventContainer = styled.div<{
     font-size: 12px;
     color: #666666;
   }
+  .icon-class{
+      visibility: hidden;
+    }
+  &:hover {
+    .icon-class{
+      visibility: visible;
+    }
+  }
 `;
 
 const StyledIcon = styled(CloseOutlined)`
@@ -79,7 +87,7 @@ const Event: React.FC<EventProps> = ({
     message.success("Deleted Event Sccessfully");
   };
 
-  const cancel: PopconfirmProps["onCancel"] = () => {};
+  const cancel: PopconfirmProps["onCancel"] = () => { };
 
   return (
     <EventContainer top={top} height={height} left={left} width={width}>
@@ -95,7 +103,7 @@ const Event: React.FC<EventProps> = ({
             cancelText="No"
             placement="bottom"
           >
-            <StyledIcon />
+            <StyledIcon className="icon-class" />
           </Popconfirm>
         </div>
         <p>Sample location</p>

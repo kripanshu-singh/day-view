@@ -7,18 +7,16 @@ import TimeLine from "./TimeLine";
 const StyledContainer = styled.div`
   display: flex;
   align-items: center;
-  overflow: auto;
-  /* height: calc(100vh - 54px); */
-  .holder {
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    height: fit-content;
-  }
+  height: 740px;
 `;
 
 const CalendarContainer = styled.div`
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  height: fit-content;
   width: 620px;
-  height: 720px;
+  height: calc(100% - 20px);
+  background-color: #ececec;
   position: relative;
   background-color: #ececec;
   border-left: 10px solid #ececec;
@@ -34,29 +32,27 @@ const Calendar: React.FC<CalendarProps> = ({ events, setEvent }) => {
   const allEvents = processEvents(events);
 
   const onDelete = (id: string) => {
-    setEvent((prev) => prev.filter((event) => event.id !== id)); // Now works
+    setEvent((prev) => prev.filter((event) => event.id !== id));
   };
 
   return (
     <StyledContainer>
       <TimeLine />
-      <div className="holder">
-        <CalendarContainer>
-          {allEvents.map((windowEvents, winIndex) =>
-            windowEvents.map((event, index) => (
-              <Event
-                key={`${winIndex}-${index}`}
-                title={event.title}
-                top={calculatePosition(event.start)}
-                height={calculatePosition(event.end - event.start)}
-                left={event.left!}
-                width={event.width!}
-                onDelete={() => onDelete(event.id!)}
-              />
-            )),
-          )}
-        </CalendarContainer>
-      </div>
+      <CalendarContainer>
+        {allEvents.map((windowEvents, winIndex) =>
+          windowEvents.map((event, index) => (
+            <Event
+              key={`${winIndex}-${index}`}
+              title={event.title}
+              top={calculatePosition(event.start)}
+              height={calculatePosition(event.end - event.start)}
+              left={event.left!}
+              width={event.width!}
+              onDelete={() => onDelete(event.id!)}
+            />
+          )),
+        )}
+      </CalendarContainer>
     </StyledContainer>
   );
 };
