@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Tooltip } from "antd";
-import me from "../assets/Me.gif";
+import me from "../assets/me.gif";
 const StyledContainer = styled.div`
   width: 100%;
   height: 54px;
