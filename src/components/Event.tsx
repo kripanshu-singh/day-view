@@ -1,17 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const EventContainer = styled.div<{
-  top: number;
-  height: number;
-  left: number;
-  width: number;
-}>`
+const EventContainer = styled.div<{ top: number; height: number; left: number; width: number }>`
   position: absolute;
-  top: ${(props) => props.top}px;
-  height: ${(props) => props.height}px;
-  left: ${(props) => props.left}%;
-  width: ${(props) => props.width}%;
+  top: ${props => props.top}px;
+  height: ${props => props.height}px;
+  left: ${props => props.left}%;
+  width: ${props => props.width}%;
   background-color: #4a90e2;
   color: white;
   padding: 5px;
@@ -20,7 +15,7 @@ const EventContainer = styled.div<{
   border: 1px solid #000;
 `;
 
-interface EventProps {
+export interface EventProps {
   title: string;
   top: number;
   height: number;
