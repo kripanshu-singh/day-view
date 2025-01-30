@@ -7,9 +7,9 @@ import styled from 'styled-components';
 
 const StyledLayout = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  
+
 `;
 
 const events = [
