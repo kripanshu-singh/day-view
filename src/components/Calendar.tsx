@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Event from "./Event";
-import { calculatePosition, processEvents, EventProps } from "./utils";
+import { processEvents, EventProps } from "./utils";
 import TimeLine from "./TimeLine";
 
 const StyledContainer = styled.div`
@@ -44,8 +44,8 @@ const Calendar: React.FC<CalendarProps> = ({ events, setEvent }) => {
             <Event
               key={`${winIndex}-${index}`}
               title={event.title}
-              top={calculatePosition(event.start)}
-              height={calculatePosition(event.end - event.start)}
+              top={event.start}
+              height={event.end - event.start}
               left={event.left!}
               width={event.width!}
               onDelete={() => onDelete(event.id!)}

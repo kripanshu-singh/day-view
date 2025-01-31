@@ -11,12 +11,10 @@ export interface EventProps {
   width?: number;
 }
 
-export const calculatePosition = (time: number) => (time / 60) * 60;
-
 export const assignWindows = (events: EventProps[]) => {
   if (events.length === 0) return [];
   const sortedEvents = [...events].sort((a, b) => a.start - b.start);
-  let windowNumber = 1;
+  let windowNumber = 0;
   let currentWindowEnd = 0;
 
   for (let event of sortedEvents) {
@@ -131,4 +129,4 @@ export const getSlots = () => {
   ]);
   slots.pop();
   return slots;
-} 
+};
