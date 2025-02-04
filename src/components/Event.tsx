@@ -50,8 +50,8 @@ const EventContainer = styled.div<{
     color: #666666;
   }
   .icon-class{
-      visibility: hidden;
-    }
+    visibility: hidden;
+  }
   &:hover {
     .icon-class{
       visibility: visible;
@@ -66,15 +66,17 @@ const StyledIcon = styled(CloseOutlined)`
 `;
 
 export interface EventProps {
+  id: string;
   title: string;
   top: number;
   height: number;
   left: number;
   width: number;
-  onDelete: (title: string) => void;
+  onDelete: (id: string) => void;
 }
 
 const Event: React.FC<EventProps> = ({
+  id,
   title,
   top,
   height,
@@ -83,7 +85,7 @@ const Event: React.FC<EventProps> = ({
   onDelete,
 }) => {
   const confirm: PopconfirmProps["onConfirm"] = () => {
-    onDelete(title);
+    onDelete(id);
     message.success("Deleted Event Sccessfully");
   };
 

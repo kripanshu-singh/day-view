@@ -43,6 +43,7 @@ const Calendar: React.FC<CalendarProps> = ({ events, setEvent }) => {
           windowEvents.map((event, index) => (
             <Event
               key={`${winIndex}-${index}`}
+              id={event.id}
               title={event.title}
               top={event.start}
               height={event.end - event.start}
